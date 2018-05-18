@@ -1,0 +1,22 @@
+{
+    "post":[
+        {
+            "id": 1,
+            "title": "One",
+            "tags": ["css","sass"],
+            "content": "Article One"
+        },
+        {
+            "id": 2,
+            "title": "Two",
+            "tags": ["html","seo"],
+            "content": "Article Two"
+        },
+        {
+            "id": 3,
+            "title": "Three",
+            "tags": ["css","sass"],
+            "content": "Article Three"
+        }
+    ]
+}

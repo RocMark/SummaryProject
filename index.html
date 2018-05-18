@@ -1,16 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Template</h1>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src="./main.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <title>Summary Project</title>
+</head>
+
+<body>
+
+  <div class="container p-0 mt-2">
+
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a id="homeLink" class="navbar-brand" href="#">RocMark</a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mr-auto">
+            <li id="xhrLink" class="nav-item">
+              <a class="nav-link" href="#">XHR</a>
+            </li>
+            <li id="fetchLink" class="nav-item">
+              <a class="nav-link" href="#">Fetch</a>
+            </li>
+            <li id="archiveLink" class="nav-item">
+              <a class="nav-link" href="#">Archive</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div id="homeArea" class="d-none showCaseArea container-fluid p-0">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title h2">RocMark</h5>
+          <h6 class="card-subtitle text-muted">所學實作總整理</h6>
+          <hr>
+          <p class="card-text">
+            <p>
+              設計 & 文章苦手，只能靠Bootstrap撐撐場面。
+              <br> 綜合所有所學知識，應用至各Example中。
+              <br> 使用 VSCode Live Server插件 & JSON-Server。
+              <br> 有使用 Gulp 經驗，正在學習 WebPack，未熟悉暫時未導入。
+            </p>
+            <a target="_blank" href="https://github.com/RocMark/SummaryProject" class="btn btn-danger h6 card-link">Github Link</a>
+            <hr>
+            <h4 class="text-muted"> Example</h4>
+            <ul>
+              <li>XHR Practice</li>
+              <li>Fetch API</li>
+              <li>JSON Server</li>
+              <li>Scroll Animation</li>
+              <li>SlideShow</li>
+            </ul>
+            <hr>
+            <h4 class="text-success">Skills</h4>
+            <ul>
+              <li>HTML5 / SASS / ES6</li>
+              <li>Bootstrap</li>
+            </ul>
+            <hr>
+
+            <h4 class="text-info">Environment</h4>
+            <ul>
+              <li>VSCode</li>
+              <li>ESLint</li>
+              <li>Git</li>
+            </ul>
+            <hr>
+
+            <h4 class="text-warning">Concept</h4>
+            <ul>
+              <li>Object Literal Pattern</li>
+              <li>Event Delegation</li>
+              <li>W3C Validation</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="fetchArea" class="d-none showCaseArea container-fluid p-0">
+      <div class="card text-left">
+        <div class="card-body">
+          <h5 class="card-title h2">Fetch</h5>
+
+          <p class="card-text">
+            <h4>Why use JSON-Server ?</h4>
+            <p>免架設伺服器，可自訂路由，方便模擬 Restful API串接</p>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <h4 class="alert-heading">＊注意</h4>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+              必須要下載專案，並安裝 JSON-Server才可進行操作
+            </div>
+
+
+            <form id="fetchForm" class="form mt-3 clearfix">
+              <div class="form-group">
+                <input name="postTitle" type="text" class="form-control mb-3" placeholder="Title" required autocomplete="off" autocorrect="off"
+                  autocapitalize="off" spellcheck="false">
+
+                <div class="tagBar">
+                  <input name="tagInput" id="tagInput" type="text" class="form-control " placeholder="Tags">
+                  <button id="addTagBtn" class="btn btn-success ml-3">ADD</button>
+                </div>
+
+                <p id="tagHint" class="d-none mt-2"></p>
+                <div id="tagDisplayArea" class="mb-3 btn-group" role="group" aria-label="">
+                </div>
+                <textarea name="postContent" class="form-control mb-3" rows="5" placeholder="Content" required></textarea>
+                <input class="btn btn-primary float-right" type="submit" value="Submit">
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="xhrArea" class="d-none showCaseArea container-fluid p-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title h2 text-left">XHR</h5>
+          <p class="card-text">
+            使用本地 txt、json檔，以及呼叫 Github API，列出Repo
+          </p>
+          <div class="mb-2" role="group" aria-label="">
+            <button id="textBtn" class="btn btn-dark" type="button">Text</button>
+            <button id="jsonBtn" class="btn btn-info" type="button">Users</button>
+            <button id="githubBtn" class="btn btn-danger" type="button">Github API</button>
+          </div>
+
+
+          <p id="ajaxTextField" class="card-text"></p>
+          <h5 id="userErrorMsg" class="text-danger d-none card-title">Users Not Found</h5>
+          <div id="userTable" class="table-responsive">
+            <h5 class="card-title text-left text-muted">List of Users</h5>
+            <table class="table table-dark table-striped table-bordered table-hover table-sm">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="row"></th>
+                  <th scope="row">Name</th>
+                  <th scope="row">Age</th>
+                </tr>
+              </thead>
+              <tbody id="userBody">
+              </tbody>
+            </table>
+          </div>
+          <div id="githubTable" class="table-responsive">
+            <table class="table table-dark table-striped table-bordered table-hover table-sm">
+              <thead class="thead-dark">
+                <tr class="text-center">
+                  <th style="width: 16.66%" scope="row"></th>
+                  <th scope="row">Name</th>
+                  <th scope="row">Link</th>
+                </tr>
+              </thead>
+              <tbody id="githubBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archiveArea" class="d-none showCaseArea container-fluid p-0">
+      <div class="card text-left">
+        <div class="card-body">
+          <h5 class="card-title h2">Archive</h5>
+          <p class="card-text">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>

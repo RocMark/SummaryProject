@@ -1,4 +1,29 @@
-h1 {
-  color: red;
+th {
+  font-weight: 400;
+  text-align: center;
+}
+
+.navSticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+}
+
+.tagBar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+}
+
+#tagDisplayArea > * {
+  margin-top: 10px;
+}
+
+#tagHint {
+  display: inline-block;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 /*# sourceMappingURL=style.css.map */
